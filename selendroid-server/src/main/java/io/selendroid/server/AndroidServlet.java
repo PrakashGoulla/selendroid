@@ -71,7 +71,7 @@ public class AndroidServlet extends BaseServlet {
     register(getHandler, new GetElementAttribute(
         "/wd/hub/session/:sessionId/element/:id/attribute/:name"));
     register(postHandler, new ClearElement("/wd/hub/session/:sessionId/element/:id/clear"));
-    register(postHandler, new ClickElement("/wd/hub/session/:sessionId/element/:id/click"));
+//    register(postHandler, new ClickElement("/wd/hub/session/:sessionId/element/:id/click"));
     register(getHandler,
         new GetElementDisplayed("/wd/hub/session/:sessionId/element/:id/displayed"));
     register(postHandler, new FindChildElement("/wd/hub/session/:sessionId/element/:id/element"));
