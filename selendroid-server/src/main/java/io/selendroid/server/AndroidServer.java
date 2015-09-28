@@ -34,11 +34,16 @@ public class AndroidServer {
     SelendroidDriver driver = Factories.getSelendroidDriverFactory().createSelendroidDriver(androidInstrumentation);
     webServer.addHandler(new StatusServlet(androidInstrumentation));
     webServer.addHandler(new InspectorServlet(driver, androidInstrumentation));
-    webServer.addHandler(new AndroidServlet(driver, androidInstrumentation.getExtensionLoader()));
+//    webServer.addHandler(new AndroidServlet(driver, androidInstrumentation.getExtensionLoader()));
+    /* Prakash: For Testing only */
+    webServer.addHandler(new AppiumServlet(driver, androidInstrumentation.getExtensionLoader()));
   }
 
   public void start() {
+    /* Prakash: For Testing only */
+    System.out.println("Prakash:  Before server start");
     webServer.start();
+    System.out.println("Prakash:  After server start");
   }
 
   public void stop() {
